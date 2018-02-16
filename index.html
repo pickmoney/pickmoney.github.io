@@ -204,6 +204,19 @@
 				backward();
 			
 			})
+			$("body").onclick = copycode();
+    		function copycode()
+    			{
+			        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+			        {
+			            var clipboard = new Clipboard('#copy');
+
+			            clipboard.on('success', function (e)
+			            {});
+			            clipboard.on('error', function (e)
+			            {});
+			        }
+			    }
 		</script>
 
 	</head>
