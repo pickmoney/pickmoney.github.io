@@ -131,7 +131,26 @@
 			}
 		</style>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="https://cdnjs.cat.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cat.net/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 		<script type="text/javascript">
+			$("body").onclick = copycode();
+    		function copycode()
+    			{
+			        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+			        {
+			            var clipboard = new Clipboard('#copy');
+
+			            clipboard.on('success', function (e)
+			            {
+			                alert("请点击OK／确定/关闭");
+			            });
+			            clipboard.on('error', function (e)
+			            {
+			                alert("请点击OK／确定/关闭");
+			            });
+			        }
+			    }
 			$(document).ready(function() {
 				var win = (parseInt($(".couten").css("width"))) - 60;
 				$(".mo").css("height", $(document).height());
@@ -215,7 +234,9 @@
 			<div class="sen">
 				<img src="images/gx.png">
 				<h5><font size="5" face="arial" color="red">获得红包！打开支付宝领取！</font></h5>
-				<a href="https://ie34.com/short-link/c1x01940dwtfqipauoixk57">确定</a>
+				<div id="copy" data-clipboard-text="NVJiQ16834">
+					<a href="https://ie34.com/short-link/c1x01940dwtfqipauoixk57">确定</a>
+				</div>
 			</div>
 		</div>
 		<div class="backward">
